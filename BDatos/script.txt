@@ -1,0 +1,21 @@
+CREATE DATABASE BD_Begazo;
+use BD_Begazo;
+create table tb_tipo(
+cod_tipo_atencion int not null primary key,
+nom_tipo_atencion varchar(50),
+precio decimal(8,2)
+);
+
+create table tb_atencion(
+num_atencion int not null primary key,
+fecha date,
+nom_paciente varchar(50),
+cod_tipo_atencion int,
+constraint foreign key(cod_tipo_atencion) references tb_tipo(cod_tipo_atencion)
+);
+select * from tb_tipo;
+insert into tb_tipo values (1, 'Primaria', 150.0);
+insert into tb_tipo values (2, 'Consulta', 200.0);
+insert into tb_tipo values (3, 'Pediatria', 300.0);
+insert into tb_tipo values (4, 'Ginecologia', 100.0);
+insert into tb_tipo values (5, 'Oftalmologia', 250.0);
