@@ -19,3 +19,11 @@ insert into tb_tipo values (2, 'Consulta', 200.0);
 insert into tb_tipo values (3, 'Pediatria', 300.0);
 insert into tb_tipo values (4, 'Ginecologia', 100.0);
 insert into tb_tipo values (5, 'Oftalmologia', 250.0);
+
+
+
+
+
+
+solucion
+https://github.com/MiguelBegazo2866/DAWI_01_Begazo_Lazarte

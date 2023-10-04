@@ -23,11 +23,15 @@ import java.awt.event.ActionEvent;
 
 public class GUIBegazo extends JFrame {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNumAtencion;
 	private JTextField txtFecha;
 	private JTextField txtNombre;
-	private JComboBox cboTipo;
+	private JComboBox<String> cboTipo;
 
 	/**
 	 * Launch the application.
@@ -88,7 +92,7 @@ public class GUIBegazo extends JFrame {
 		contentPane.add(txtNombre);
 		txtNombre.setColumns(10);
 		
-		cboTipo = new JComboBox();
+		cboTipo = new JComboBox<String>();
 		cboTipo.setBounds(197, 164, 173, 22);
 		contentPane.add(cboTipo);
 		
@@ -113,9 +117,9 @@ public class GUIBegazo extends JFrame {
 
 	private void comboTipo() {
 		// TODO Auto-generated method stub
-		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("DAWI_01_Begazo_Lazarte");
+		EntityManagerFactory fabrica = Persistence.createEntityManagerFactory("jpa_baseDAWI");
 		EntityManager em = fabrica.createEntityManager();
-		String jpql = "select t from tb_tipo t";
+		String jpql = "select t from Tipo t";
 		List<Tipo> lstTipo = em.createQuery(jpql, Tipo.class).getResultList();
 		cboTipo.addItem("Seleccione...");
 		for(Tipo t: lstTipo) {
